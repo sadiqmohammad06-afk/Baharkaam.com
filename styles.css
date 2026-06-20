@@ -1,0 +1,59 @@
+/* Custom Neon & Responsive Animations for baharkaam.com */
+
+/* 3D Avatar Area Light Glow Effect */
+.avatar-glow {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+    animation: floatingAvatar 3s ease-in-out infinite;
+}
+
+@keyframes floatingAvatar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Emergency Floating SOS Pulse Animation */
+.sos-pulse {
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    animation: pulseSos 1.8s infinite;
+}
+
+@keyframes pulseSos {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(220, 38, 38, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+    }
+}
+
+/* Fade-in Animation for Dynamic Sections */
+.animate-fadeIn {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Clean Custom Scrollbar for Mobile Lists */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #020617;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
