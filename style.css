@@ -1231,3 +1231,283 @@ button {
   width: 62px;
   height: 62px;
 }
+/* =========================================================
+   Final Mobile UX Fix — Compact, Fast, Clickable Cards
+   Paste at the END of style.css
+   ========================================================= */
+
+/* Speed improvement: heavy animations/blur reduce */
+* {
+  scroll-behavior: auto !important;
+}
+
+.app-shell {
+  padding: 18px 14px 118px !important;
+  max-width: 430px !important;
+}
+
+/* Header compact */
+.app-header {
+  padding: 4px 0 8px !important;
+}
+
+.brand-logo {
+  width: 50px !important;
+  height: 50px !important;
+  flex-basis: 50px !important;
+  border-radius: 17px !important;
+}
+
+.brand-text h1 {
+  font-size: 23px !important;
+}
+
+.brand-text p {
+  font-size: 11.5px !important;
+}
+
+.header-btn {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* Language dropdown vertical, not side-scroll */
+.language-panel {
+  position: absolute !important;
+  top: 76px !important;
+  right: 14px !important;
+  z-index: 80 !important;
+  width: 220px !important;
+  display: grid !important;
+  gap: 8px !important;
+  padding: 12px !important;
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.16) !important;
+  overflow: visible !important;
+}
+
+.language-panel.hidden {
+  display: none !important;
+}
+
+.language-panel button {
+  width: 100% !important;
+  text-align: left !important;
+  padding: 11px 12px !important;
+  border-radius: 14px !important;
+  font-size: 13px !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.14) !important;
+}
+
+/* Hero compact so 4 cards show earlier */
+.ai-hero {
+  padding: 6px 0 8px !important;
+}
+
+.hero-kicker {
+  display: none !important;
+}
+
+.ai-hero h2 {
+  font-size: 34px !important;
+  line-height: 1 !important;
+  margin-top: 2px !important;
+}
+
+.hero-subtitle {
+  max-width: 310px !important;
+  font-size: 11.8px !important;
+  line-height: 1.3 !important;
+  margin-top: 7px !important;
+}
+
+.waveform {
+  height: 22px !important;
+  margin: 7px auto 0 !important;
+}
+
+.waveform::before,
+.waveform::after {
+  width: 54px !important;
+}
+
+.waveform span:nth-child(4) {
+  height: 26px !important;
+}
+
+/* Mic smaller + cleaner */
+.mic-button {
+  width: 112px !important;
+  height: 112px !important;
+  margin: 0 auto 9px !important;
+}
+
+.pulse-ring {
+  animation-duration: 3.8s !important;
+  opacity: 0.5 !important;
+}
+
+.ring-three {
+  display: none !important;
+}
+
+.mic-core {
+  width: 78px !important;
+  height: 78px !important;
+  font-size: 0 !important;
+}
+
+.mic-core::before {
+  content: "🎙️";
+  font-size: 32px;
+}
+
+/* AI answer compact */
+.ai-status-card {
+  width: 100% !important;
+  padding: 11px 13px !important;
+  border-radius: 22px !important;
+  margin-top: 4px !important;
+}
+
+.ai-status-card strong {
+  font-size: 13px !important;
+}
+
+.ai-status-card p {
+  font-size: 10.8px !important;
+}
+
+/* Main tools closer */
+.core-section {
+  padding-top: 6px !important;
+}
+
+.section-heading {
+  margin-bottom: 9px !important;
+}
+
+.small-label {
+  font-size: 10px !important;
+  letter-spacing: 0.12em !important;
+}
+
+.section-heading h2 {
+  font-size: 20px !important;
+}
+
+/* 4 cards full visible better */
+.core-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.service-card {
+  min-height: 140px !important;
+  padding: 12px !important;
+  border-radius: 22px !important;
+  cursor: pointer !important;
+}
+
+.card-icon-wrap {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 18px !important;
+  margin-bottom: 8px !important;
+}
+
+.asset-icon {
+  font-size: 30px !important;
+}
+
+.card-content {
+  padding-right: 0 !important;
+}
+
+.card-content h3 {
+  font-size: 13.5px !important;
+  line-height: 1.14 !important;
+}
+
+.card-content p {
+  font-size: 10.3px !important;
+  line-height: 1.25 !important;
+  margin-top: 5px !important;
+}
+
+/* Remove ugly big arrows */
+.card-arrow {
+  display: none !important;
+}
+
+/* Add subtle open text */
+.service-card .card-content::after {
+  content: "Open →";
+  display: block;
+  margin-top: 7px;
+  font-size: 10.5px;
+  font-weight: 900;
+}
+
+.card-jobs .card-content::after {
+  color: #059669;
+}
+
+.card-visa .card-content::after {
+  color: #dc2626;
+}
+
+.card-salary .card-content::after {
+  color: #2563eb;
+}
+
+.card-money .card-content::after {
+  color: #16a34a;
+}
+
+/* SOS stays good but less cover */
+.sos-button {
+  right: 18px !important;
+  left: auto !important;
+  bottom: 84px !important;
+  width: 58px !important;
+  height: 58px !important;
+}
+
+.sos-button strong {
+  font-size: 9px !important;
+}
+
+/* Bottom nav lighter and smaller */
+.bottom-nav {
+  height: 64px !important;
+  bottom: 12px !important;
+  width: min(396px, calc(100vw - 24px)) !important;
+  border-radius: 28px !important;
+}
+
+.nav-mic {
+  width: 58px !important;
+  height: 58px !important;
+  margin-top: -22px !important;
+  font-size: 0 !important;
+}
+
+.nav-mic::before {
+  content: "🎙️";
+  font-size: 25px;
+}
+
+.nav-item span {
+  font-size: 18px !important;
+}
+
+.nav-item small {
+  font-size: 10px !important;
+}
+
+/* Roles start lower but smooth */
+.roles-section {
+  padding-top: 14px !important;
+}
