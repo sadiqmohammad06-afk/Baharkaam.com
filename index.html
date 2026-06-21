@@ -1,244 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baharkaam.com | Verified Blue-Collar Jobs & Safety Roadmap</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Find verified jobs in Gulf & Europe for Drivers, Helpers, Welders, and Cleaners. Avoid agent frauds with our Risk Score system and emergency SOS help.">
-    <meta name="keywords" content="baharkaam, overseas jobs, gulf jobs, visa fraud check, driver jobs abroad, helper jobs, saudi visa check">
-    <meta name="author" content="baharkaam.com">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
-    <!-- Google Fonts for Premium Look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom Glowing Styles Link -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-slate-950 text-slate-100 font-['Poppins'] antialiased min-h-screen pb-24">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- HEADER & 3-DOT MENU -->
-    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-40 px-4 py-3">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <!-- Brand Logo with Neon Effect -->
-            <div class="flex items-center space-x-2">
-                <span class="text-2xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">BAHARKAAM<span class="text-cyan-400">.COM</span></span>
-            </div>
-            
-            <!-- Right Actions -->
-            <div class="flex items-center space-x-4">
-                <!-- Simple English / Language Badge Indicator -->
-                <span class="text-xs bg-slate-800 border border-slate-700 px-2 py-1 rounded text-cyan-400 font-mono">EN / HIN</span>
-                
-                <!-- 3-Dot Hamburger Button -->
-                <button id="menuBtn" class="text-slate-400 hover:text-white p-2 focus:outline-none" aria-label="Open Menu">
-                    <i class="fa-solid fa-ellipsis-vertical text-xl"></i>
-                </button>
-            </div>
+  <title>BaharKaam — Safe Foreign Jobs & Visa Guide</title>
+
+  <meta
+    name="description"
+    content="BaharKaam is a worker-first safety and information platform for India, Pakistan, Bangladesh and Nepal workers looking for safe foreign jobs, visa guidance, salary reality and fraud awareness."
+  />
+
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app-shell">
+
+    <!-- ================= HEADER ================= -->
+    <header class="app-header" aria-label="BaharKaam header">
+      <div class="brand-wrap">
+        <div class="brand-logo" aria-hidden="true">
+          BK
         </div>
-        
-        <!-- Dropdown Side-Drawer Menu (Hidden by default) -->
-        <div id="sideMenu" class="hidden absolute top-full right-4 mt-2 w-64 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-4 space-y-3 z-50">
-            <button id="langSwitcher" class="w-full flex items-center justify-between p-2 hover:bg-slate-800 rounded-lg text-sm text-left">
-                <span><i class="fa-solid fa-language mr-2 text-cyan-400"></i> Switch Language / Bhasha</span>
-                <span class="text-xs text-slate-500">Hinglish ⇄ Eng</span>
-            </button>
-            <a href="#scamFormSection" class="block p-2 hover:bg-slate-800 rounded-lg text-sm"><i class="fa-solid fa-triangle-exclamation mr-2 text-amber-500"></i> Report Scam / Fraud Agent</a>
-            <button id="familyCheckMenu" class="w-full flex items-center p-2 hover:bg-slate-800 rounded-lg text-sm text-left">
-                <i class="fa-solid fa-users mr-2 text-indigo-400"></i> Family Verification Check
-            </button>
-            <hr class="border-slate-800">
-            <button class="w-full text-left p-2 hover:bg-slate-800 rounded-lg text-xs text-slate-400" onclick="alert('Privacy Policy - AdSense Approved Content Setup')">Privacy Policy</button>
-            <button class="w-full text-left p-2 hover:bg-slate-800 rounded-lg text-xs text-slate-400" onclick="alert('Terms & Conditions - Legal Disclaimer Setup')">Terms & Conditions</button>
+
+        <div class="brand-text">
+          <h1>BaharKaam</h1>
+          <p>Safe Foreign Jobs & Visa Guide</p>
         </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="header-btn" id="languageBtn" type="button" aria-label="Choose language">
+          🌐
+        </button>
+
+        <button class="header-btn notification-btn" type="button" aria-label="Notifications">
+          🔔
+          <span class="blue-dot" aria-hidden="true"></span>
+        </button>
+      </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 mt-6 space-y-8">
-        
-        <!-- HERO AREA: FUTURISTIC 3D AVATAR & AI MIC SECTION -->
-        <section class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800/80 rounded-2xl p-6 text-center relative overflow-hidden shadow-xl">
-            <!-- Background glow grids controlled via CSS -->
-            <div class="absolute -top-24 -left-24 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl"></div>
-            
-            <!-- 3D Avatar Theme Container -->
-            <div class="flex justify-center mb-4">
-                <div class="relative w-24 h-24 rounded-full bg-slate-800 border-2 border-cyan-400/50 flex items-center justify-center avatar-glow">
-                    <!-- Icon placeholder representing the hyper-realistic glowing worker warrior -->
-                    <i class="fa-solid fa-user-shield text-4xl text-cyan-400"></i>
-                    <div class="absolute -right-1 bottom-1 bg-blue-500 p-1 rounded-full text-[10px] text-white"><i class="fa-solid fa-bolt"></i></div>
-                </div>
-            </div>
-            
-            <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">Asli Aur Safe Videsh Kaam Guide</h1>
-            <p class="text-sm text-slate-400 mt-1 max-w-md mx-auto">Agent ke dhokhe se bachein. Sahi sarkaari rasta aur verified jobs check karein.</p>
-            
-            <!-- AI VOICE SECTION: "BOLKAR POOCHEIN" -->
-            <div class="mt-6 max-w-lg mx-auto">
-                <div class="relative flex items-center">
-                    <input type="text" id="searchInput" placeholder="Dubai Driver ya Saudi Helper job kaise milegi?..." class="w-full bg-slate-900/90 border border-slate-700 rounded-xl py-3 pl-4 pr-12 text-sm focus:outline-none focus:border-cyan-400 transition placeholder-slate-500">
-                    <button id="micBtn" class="absolute right-2 p-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 rounded-lg text-white transition focus:outline-none group" aria-label="Speak and search">
-                        <i id="micIcon" class="fa-solid fa-microphone"></i>
-                    </button>
-                </div>
-                <!-- Mic Active Visual Indicator -->
-                <div id="micWaveform" class="hidden flex items-center justify-center space-x-1 mt-2 transition">
-                    <span class="w-1 h-3 bg-cyan-400 animate-bounce delay-75"></span>
-                    <span class="w-1 h-5 bg-blue-400 animate-bounce"></span>
-                    <span class="w-1 h-3 bg-cyan-400 animate-bounce delay-150"></span>
-                    <p class="text-xs text-cyan-400 ml-2 font-mono">Listening / Aap Bolie...</p>
-                </div>
-            </div>
-        </section>
+    <!-- ================= LANGUAGE PANEL ================= -->
+    <section class="language-panel hidden" id="languagePanel" aria-label="Language options">
+      <button type="button" data-lang="hinglish">Hinglish / Hindi</button>
+      <button type="button" data-lang="urdu">Roman Urdu</button>
+      <button type="button" data-lang="bengali">Bengali</button>
+      <button type="button" data-lang="nepali">Nepali</button>
+      <button type="button" data-lang="english">Simple English</button>
+    </section>
 
-        <!-- MAIN 4 GRID CARDS SECTION -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <!-- CARD 1: VERIFIED JOBS & ROADMAP -->
-            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between shadow-md group hover:border-slate-700 transition">
-                <div>
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                        <h2 class="font-bold text-base flex items-center text-white"><i class="fa-solid fa-briefcase mr-2 text-cyan-400"></i> 1. Verified Jobs & Roadmap</h2>
-                        <span class="text-[10px] bg-slate-800 text-slate-400 border border-slate-700 px-2 py-0.5 rounded-full">Card 1</span>
-                    </div>
-                    
-                    <!-- 10 Job Category Filters Grid -->
-                    <div class="grid grid-cols-5 gap-2 mt-4 text-center">
-                        <button class="cat-filter p-2 bg-slate-950 rounded-lg hover:border hover:border-cyan-500 transition" data-category="Driver"><i class="fa-solid fa-id-card text-xs text-slate-400 block mb-1"></i><span class="text-[9px] text-slate-300 block truncate">Driver</span></button>
-                        <button class="cat-filter p-2 bg-slate-950 rounded-lg hover:border hover:border-cyan-500 transition" data-category="Helper"><i class="fa-solid fa-helmet-safety text-xs text-slate-400 block mb-1"></i><span class="text-[9px] text-slate-300 block truncate">Helper</span></button>
-                        <button class="cat-filter p-2 bg-slate-950 rounded-lg hover:border hover:border-cyan-500 transition" data-category="Welder"><i class="fa-solid fa-fire text-xs text-slate-400 block mb-1"></i><span class="text-[9px] text-slate-300 block truncate">Welder</span></button>
-                        <button class="cat-filter p-2 bg-slate-950 rounded-lg hover:border hover:border-cyan-500 transition" data-category="Cleaner"><i class="fa-solid fa-broom text-xs text-slate-400 block mb-1"></i><span class="text-[9px] text-slate-300 block truncate">Cleaner</span></button>
-                        <button class="cat-filter p-2 bg-slate-950 rounded-lg hover:border hover:border-cyan-500 transition" data-category="Security"><i class="fa-solid fa-shield-halved text-xs text-slate-400 block mb-1"></i><span class="text-[9px] text-slate-300 block truncate">Security</span></button>
-                    </div>
-                    
-                    <!-- Dynamic Job Feed Container (Fixed Format Inside) -->
-                    <div id="jobFeed" class="mt-4 space-y-3">
-                        <!-- Sample Job Card (Simulated Output) -->
-                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-2 relative overflow-hidden">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <span class="text-[10px] text-cyan-400 bg-cyan-950 border border-cyan-800 px-2 py-0.5 rounded font-mono uppercase tracking-wider">UAE (Dubai)</span>
-                                    <h3 class="font-semibold text-sm text-white mt-1">Light Vehicle Driver</h3>
-                                </div>
-                                <!-- Risk Score Badge System -->
-                                <span class="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded font-bold flex items-center"><i class="fa-solid fa-circle-check mr-1 text-[8px]"></i> 🟢 Safe Score</span>
-                            </div>
-                            <div class="grid grid-cols-2 gap-x-2 gap-y-1 text-xs text-slate-400 border-t border-slate-900 pt-2 font-mono">
-                                <p>💵 Salary: <span class="text-white">2000 AED</span></p>
-                                <p>🏠 Stay/Food: <span class="text-white">Provided</span></p>
-                                <p>📄 Visa Type: <span class="text-white">Work Visa</span></p>
-                                <p>🏢 Company: <span class="text-white">Al-Futtaim Logistics</span></p>
-                            </div>
-                            <p class="text-[10px] text-amber-500/90 bg-amber-950/30 border border-amber-900/50 p-2 rounded"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Warning: Is naukri ke liye kisi agent ko 1.2 Lakh se zyada mat dena.</p>
-                            
-                            <!-- Trigger for Safety Checklist Popup -->
-                            <button class="triggerApplyBtn w-full mt-2 py-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg text-xs transition">Apply Safely / Apply Process</button>
-                        </div>
-                    </div>
-                </div>
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+      <!-- ================= AI MIC HERO ================= -->
+      <section class="ai-hero" aria-labelledby="aiHeroTitle">
+        <div class="hero-bg-glow" aria-hidden="true"></div>
+
+        <p class="hero-kicker">AI Voice Roadmap</p>
+        <h2 id="aiHeroTitle">Bolkar Poochein</h2>
+        <p class="hero-subtitle">
+          Job, visa, salary ya fraud ke baare mein apni bhasha mein poochein
+        </p>
+
+        <div class="waveform" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <button class="mic-button" id="micButton" type="button" aria-label="Start voice assistant">
+          <span class="pulse-ring ring-one"></span>
+          <span class="pulse-ring ring-two"></span>
+          <span class="pulse-ring ring-three"></span>
+          <span class="mic-core">🎤</span>
+        </button>
+
+        <div class="ai-status-card" id="aiStatusCard">
+          <div class="status-left">
+            <span class="online-dot"></span>
+            <div>
+              <strong id="aiStatusTitle">Sathi AI sun raha hai...</strong>
+              <p id="aiStatusText">Jab aap bolna shuru karenge, yahan jawaab dikhega</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CORE CARDS ================= -->
+      <section class="core-section" aria-labelledby="coreCardsTitle">
+        <div class="section-heading">
+          <div>
+            <p class="small-label">Main Tools</p>
+            <h2 id="coreCardsTitle">Aapke Safe Kaam ke liye</h2>
+          </div>
+        </div>
+
+        <div class="core-grid">
+
+          <!-- Card 1 -->
+          <article class="service-card card-jobs">
+            <div class="card-icon-wrap">
+              <div class="asset-icon asset-briefcase" aria-hidden="true">💼</div>
             </div>
 
-            <!-- CARD 2: VISA & OFFER LETTER CHECK -->
-            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between shadow-md group hover:border-slate-700 transition">
-                <div>
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                        <h2 class="font-bold text-base flex items-center text-white"><i class="fa-solid fa-passport mr-2 text-cyan-400"></i> 2. Visa & Offer Letter Check</h2>
-                        <span class="text-[10px] bg-slate-800 text-slate-400 border border-slate-700 px-2 py-0.5 rounded-full">Card 2</span>
-                    </div>
-                    
-                    <!-- PNR Masterstroke Tool Layout -->
-                    <div class="mt-4 p-3 bg-slate-950 border border-slate-800 rounded-xl space-y-2">
-                        <label class="block text-xs font-semibold text-slate-300">Ticket PNR WhatsApp Cancellation Alert</label>
-                        <div class="flex space-x-2">
-                            <input type="text" id="pnrInput" placeholder="Enter Ticket PNR Number..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-cyan-400 font-mono">
-                            <button id="activatePnrBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-xs font-semibold shrink-0 transition">Track PNR</button>
-                        </div>
-                        <p id="pnrStatusText" class="hidden text-[10px] font-mono"></p>
-                    </div>
-
-                    <!-- Fake Offer Letter Scanner List Grid -->
-                    <div class="mt-4 grid grid-cols-2 gap-2">
-                        <button class="p-3 bg-slate-950 border border-slate-800 hover:border-cyan-500 rounded-xl text-left transition" onclick="alert('Offer Letter Verification Guide: Look for corporate stamp and government seal alignment.')">
-                            <h4 class="text-xs font-bold text-white mb-1"><i class="fa-solid fa-file-signature text-cyan-400 mr-1"></i> Offer Letter Check</h4>
-                            <p class="text-[10px] text-slate-500">Real vs Fake checklist</p>
-                        </button>
-                        <button class="p-3 bg-slate-950 border border-slate-800 hover:border-cyan-500 rounded-xl text-left transition" onclick="alert('Visit Visa Warning: Working on Visit Visa is illegal in Gulf and Europe. Always insist on proper Work Permit.')">
-                            <h4 class="text-xs font-bold text-amber-500 mb-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Visit Visa Warning</h4>
-                            <p class="text-[10px] text-slate-500">Don\'t take risky visa</p>
-                        </button>
-                    </div>
-                </div>
+            <div class="card-content">
+              <h3>Verified Jobs & Roadmap</h3>
+              <p>Source checked jobs, apply process aur documents</p>
             </div>
 
-            <!-- CARD 3: SALARY, DOCUMENTS & COUNTRY GUIDE -->
-            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between shadow-md group hover:border-slate-700 transition">
-                <div>
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                        <h2 class="font-bold text-base flex items-center text-white"><i class="fa-solid fa-earth-asia mr-2 text-cyan-400"></i> 3. Country & Salary Reality</h2>
-                        <span class="text-[10px] bg-slate-800 text-slate-400 border border-slate-700 px-2 py-0.5 rounded-full">Card 3</span>
-                    </div>
-                    
-                    <!-- Country Selector Buttons -->
-                    <div class="grid grid-cols-4 gap-2 mt-4">
-                        <button class="country-btn py-2 bg-slate-950 border border-slate-800 hover:border-cyan-400 rounded-lg text-xs font-medium text-slate-300 transition" data-country="UAE">UAE 🇦🇪</button>
-                        <button class="country-btn py-2 bg-slate-950 border border-slate-800 hover:border-cyan-400 rounded-lg text-xs font-medium text-slate-300 transition" data-country="Saudi">Saudi 🇸🇦</button>
-                        <button class="country-btn py-2 bg-slate-950 border border-slate-800 hover:border-cyan-400 rounded-lg text-xs font-medium text-slate-300 transition" data-country="Qatar">Qatar 🇶🇦</button>
-                        <button class="country-btn py-2 bg-slate-950 border border-slate-800 hover:border-cyan-400 rounded-lg text-xs font-medium text-slate-300 transition" data-country="Romania">Romania 🇷🇴</button>
-                    </div>
-                    
-                    <!-- Dynamic Country Report Output -->
-                    <div id="countryReport" class="mt-4 p-4 bg-slate-950 border border-slate-800 rounded-xl space-y-2 hidden">
-                        <!-- Content will load dynamically from script.js -->
-                    </div>
-                    <p id="countryReportPlaceholder" class="text-xs text-slate-500 text-center mt-6">Select a country to load salary reality and required document roadmap.</p>
-                </div>
+            <button class="card-arrow" id="jobsCardBtn" type="button" aria-label="Open verified jobs">
+              →
+            </button>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="service-card card-visa">
+            <div class="card-icon-wrap">
+              <div class="asset-icon asset-shield" aria-hidden="true">🛡️</div>
             </div>
 
-            <!-- CARD 4: MONEY, LOAN & FAMILY SAFETY -->
-            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between shadow-md group hover:border-slate-700 transition">
-                <div>
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                        <h2 class="font-bold text-base flex items-center text-white"><i class="fa-solid fa-wallet mr-2 text-cyan-400"></i> 4. Money & Family Safety</h2>
-                        <span class="text-[10px] bg-slate-800 text-slate-400 border border-slate-700 px-2 py-0.5 rounded-full">Card 4</span>
-                    </div>
-                    
-                    <!-- Live Currency Remittance Calculator Grid Layout -->
-                    <div class="mt-4 bg-slate-950 border border-slate-800 p-3 rounded-xl space-y-3">
-                        <p class="text-xs font-semibold text-slate-300"><i class="fa-solid fa-calculator text-cyan-400 mr-1"></i> Live Exchange Rate Calculator</p>
-                        <div class="grid grid-cols-2 gap-2">
-                            <div>
-                                <label class="text-[10px] text-slate-500 block mb-1">Foreign Currency (AED/SAR)</label>
-                                <input type="number" id="foreignInput" value="1" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs font-mono focus:outline-none focus:border-cyan-400">
-                            </div>
-                            <div>
-                                <label class="text-[10px] text-slate-500 block mb-1">Home Currency (INR/PKR)</label>
-                                <div id="homeOutput" class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs font-mono text-cyan-400 leading-6">22.50 INR</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- WhatsApp Family Share Summary Tool -->
-                    <div class="mt-4 space-y-2">
-                        <button id="whatsappShareBtn" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg text-xs flex items-center justify-center transition">
-                            <i class="fa-brands fa-whatsapp mr-2 text-sm"></i> Send Job Summary to Family / Save Record
-                        </button>
-                    </div>
-                </div>
+            <div class="card-content">
+              <h3>Visa & Offer Letter Check</h3>
+              <p>Fake visa, offer letter aur agent fraud check</p>
             </div>
-            
-        </section>
 
-        <!-- FAMILY VERIFICATION CHECK COMPONENT BLOCK -->
-        <section id="familyCheckSection" class="hidden bg-slate-900 border border-indigo-900/60 rounded-xl p-5 shadow-xl transition animate-fadeIn">
-            <h2 class="font-bold text-base text-white flex items-center border-b border-slate-800 pb-3"><i class="fa-solid fa-users-viewfinder mr-2 text-indigo-400"></i> Ghar Wale Status Check Karein (Family Check)</h2>
-            <div class="mt-4 max-w-md space-y-3">
-                <p class="text-xs text-slate-400">Worker ka Passport number daal kar unka security check aur verified record dekhein:</p>
-                <div class="flex space-x-2">
+            <button class="card-arrow" type="button" aria-label="Open visa checker">
+              →
+            </button>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="service-card card-salary">
+            <div class="card-icon-wrap">
+              <div class="asset-icon asset-bank" aria-hidden="true">🏦</div>
+            </div>
+
+            <div class="card-content">
+              <h3>Salary & Country Guide</h3>
+              <p>Salary reality, PCC, medical aur country roadmap</p>
+            </div>
+
+            <button class="card-arrow" type="button" aria-label="Open salary and country guide">
+              →
+            </button>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="service-card card-money">
+            <div class="card-icon-wrap">
+              <div class="asset-icon asset-money" aria-hidden="true">🌍</div>
+            </div>
+
+            <div class="card-content">
+              <h3>Money & Family Safety</h3>
+              <p>Payment receipt, loan safety aur family verification</p>
+            </div>
+
+            <button class="card-arrow" type="button" aria-label="Open money and family safety">
+              →
+            </button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ================= ROLES ================= -->
+      <section class="roles-section" aria-labelledby="rolesTitle">
+        <div class="section-row">
+          <div class="section-title-left">
+            <span class="section-icon">👥</span>
+            <h2 id="rolesTitle">Kaam ke Roles</h2>
+          </div>
+
+          <button class="view-all-btn" type="button">
+            View All
+          </button>
+        </div>
+
+        <div class="roles-scroll" aria-label="Job role categories">
+
+          <article class="role-card">
+            <div class="role-avatar">🚗</div>
+            <h3>Driver</h3>
+            <p>10K+ searches</p>
+          </article>
+
+          <article class="role-card">
+            <div class="role-avatar">👷</div>
+            <h3>Helper</h3>
+            <p>8K+ searches</p>
+          </article>
+
+          <article class="role-card">
+            <div class="role-avatar">🧑‍🏭</div>
+            <h3>Welder</h3>
+            <p>6K+ searches</p>
+          </article>
+
+          <article class="role-card">
+            <div class="role-avatar">🧹</div>
+            <h3>Cleaner</h3>
+            <p>5K+ searches</p>
+          </article>
+
+          <article class="role-card">
+            <div class="role-avatar">🛡️</div>
+            <h3>Security</h3>
+            <p>4K+ searches</p>
+          </article>
+
+          <article class="role-card">
+            <div class="role-avatar">🏭</div>
+            <h3>Factory</h3>
+            <p>3K+ searches</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ================= TRUST / POLICY LINKS ================= -->
+      <section class="trust-links" aria-label="Trust and policy links">
+        <button type="button" data-policy="about">About Us</button>
+        <button type="button" data-policy="privacy">Privacy Policy</button>
+        <button type="button" data-policy="terms">Terms</button>
+        <button type="button" data-policy="disclaimer">Disclaimer</button>
+        <button type="button" data-policy="contact">Contact</button>
+      </section>
+
+    </main>
+
+    <!-- ================= FLOATING SOS ================= -->
+    <button class="sos-button" id="sosButton" type="button" aria-label="Open emergency SOS help">
+      <span>🚨</span>
+      <strong>SOS</strong>
+    </button>
+
+    <!-- ================= BOTTOM NAV ================= -->
+    <nav class="bottom-nav" aria-label="Bottom navigation">
+      <button class="nav-item active" type="button">
+        <span>🏠</span>
+        <small>Home</small>
+      </button>
+
+      <button class="nav-item" type="button">
+        <span>💼</span>
+        <small>Jobs</small>
+      </button>
+
+      <button class="nav-mic" type="button" aria-label="AI Mic">
+        🎤
+      </button>
+
+      <button class="nav-item" type="button">
+        <span>⚠️</span>
+        <small>Alerts</small>
+      </button>
+
+      <button class="nav-item" type="button">
+        <span>👤</span>
+        <small>Profile</small>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- ================= SOS MODAL ================= -->
+  <div class="modal-backdrop hidden" id="sosModal" role="dialog" aria-modal="true" aria-labelledby="sosModalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="closeSosModal" type="button" aria-label="Close emergency modal">
+        ×
+      </button>
+
+      <h2 id="sosModalTitle">Emergency Help</h2>
+      <p class="modal-subtitle">
+        Gulf ya Europe mein fas gaye hain? Pehle local emergency aur embassy help check karein.
+      </p>
+
+      <div class="emergency-list">
+        <button type="button">🇦🇪 UAE Emergency</button>
+        <button type="button">🇸🇦 Saudi Emergency</button>
+        <button type="button">🇶🇦 Qatar Emergency</button>
+        <button type="button">🇴🇲 Oman Emergency</button>
+        <button type="button">🇰🇼 Kuwait Emergency</button>
+        <button type="button">🇷🇴 Romania Emergency</button>
+        <button type="button">Embassy Help</button>
+        <button type="button">Report Scam</button>
+      </div>
+
+      <div class="modal-warning">
+        <strong>Note:</strong>
+        BaharKaam emergency service nahi hai. Final help ke liye official embassy, police, labour department ya government helpline se contact karein.
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= APPLY CHECKLIST MODAL ================= -->
+  <div class="modal-backdrop hidden" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="closeApplyModal" type="button" aria-label="Close apply checklist">
+        ×
+      </button>
+
+      <h2 id="applyModalTitle">Apply se pehle Safety Check</h2>
+      <p class="modal-subtitle">
+        Proceed karne se pehle ye 5 points check karein.
+      </p>
+
+      <form class="checklist-form" id="safetyChecklist">
+        <label>
+          <input type="checkbox" />
+          Kya visa work visa hai?
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          Kya company ka naam clear hai?
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          Kya salary written contract mein hai?
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          Kya agent receipt de raha hai?
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          Kya passport bina receipt ke nahi diya?
+        </label>
+
+        <button class="proceed-btn" id="proceedApplyBtn" type="button" disabled>
+          Proceed to Apply
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= POLICY MODAL ================= -->
+  <div class="modal-backdrop hidden" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="policyModalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="closePolicyModal" type="button" aria-label="Close policy modal">
+        ×
+      </button>
+
+      <h2 id="policyModalTitle">BaharKaam Policy</h2>
+
+      <div class="policy-content" id="policyContent">
+        <p>
+          BaharKaam visa agency ya recruiting agency nahi hai. Hum sirf information, safety checklist,
+          verified source guidance aur fraud awareness provide karte hain.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JS -->
+  <script src="script.js"></script>
+</body>
+    </html>
