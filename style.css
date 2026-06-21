@@ -1068,3 +1068,166 @@ button {
     right: 18px;
   }
 }
+/* =========================================================
+   Mobile First Compact Premium Patch
+   Paste at the END of style.css
+   ========================================================= */
+
+.app-shell {
+  padding-top: 18px;
+  padding-bottom: 130px;
+}
+
+.ai-hero {
+  padding: 10px 0 10px;
+}
+
+.hero-kicker {
+  margin-bottom: 4px;
+  font-size: 10px;
+}
+
+.ai-hero h2 {
+  font-size: 38px;
+}
+
+.hero-subtitle {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.waveform {
+  margin: 10px auto 0;
+  height: 28px;
+}
+
+.mic-button {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 12px;
+}
+
+.mic-core {
+  width: 88px;
+  height: 88px;
+  font-size: 0;
+}
+
+.mic-core::before {
+  content: "🎙️";
+  font-size: 38px;
+}
+
+.ai-status-card {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 22px;
+}
+
+.core-section {
+  padding-top: 0;
+}
+
+.section-heading {
+  margin-bottom: 10px;
+}
+
+.small-label {
+  font-size: 10px;
+}
+
+.section-heading h2 {
+  font-size: 19px;
+}
+
+.core-grid {
+  gap: 10px;
+}
+
+.service-card {
+  min-height: 152px;
+  padding: 12px;
+  border-radius: 22px;
+}
+
+.card-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  margin-bottom: 9px;
+}
+
+.asset-icon {
+  font-size: 32px;
+}
+
+.card-content {
+  padding-right: 22px;
+}
+
+.card-content h3 {
+  font-size: 13.5px;
+  line-height: 1.15;
+}
+
+.card-content p {
+  font-size: 10.2px;
+  line-height: 1.28;
+  margin-top: 5px;
+}
+
+.card-arrow {
+  width: 32px;
+  height: 32px;
+  right: 10px;
+  bottom: 10px;
+  font-size: 18px;
+}
+
+.roles-section {
+  padding-top: 16px;
+}
+
+.role-card {
+  flex-basis: 112px;
+  min-height: 148px;
+  padding: 10px;
+  border-radius: 22px;
+}
+
+.role-avatar {
+  height: 82px;
+  font-size: 42px;
+}
+
+.role-card h3 {
+  font-size: 14px;
+}
+
+.role-card p {
+  font-size: 11px;
+}
+
+.bottom-nav {
+  height: 66px;
+  bottom: 12px;
+}
+
+.nav-mic {
+  width: 60px;
+  height: 60px;
+  margin-top: -22px;
+  font-size: 0;
+}
+
+.nav-mic::before {
+  content: "🎙️";
+  font-size: 27px;
+}
+
+.sos-button {
+  bottom: 86px;
+  width: 62px;
+  height: 62px;
+}
