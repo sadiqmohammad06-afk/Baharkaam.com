@@ -1,183 +1,373 @@
-// JavaScript Functionality Engine for baharkaam.com
+/* =========================================================
+   BaharKaam Frontend Interactions
+   File: script.js
+   ========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // --- 1. HEADER 3-DOT MENU CONTROL ---
-    const menuBtn = document.getElementById("menuBtn");
-    const sideMenu = document.getElementById("sideMenu");
+  const micButton = document.getElementById("micButton");
+  const aiStatusTitle = document.getElementById("aiStatusTitle");
+  const aiStatusText = document.getElementById("aiStatusText");
 
-    menuBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        sideMenu.classList.toggle("hidden");
+  const languageBtn = document.getElementById("languageBtn");
+  const languagePanel = document.getElementById("languagePanel");
+
+  const sosButton = document.getElementById("sosButton");
+  const sosModal = document.getElementById("sosModal");
+  const closeSosModal = document.getElementById("closeSosModal");
+
+  const jobsCardBtn = document.getElementById("jobsCardBtn");
+  const applyModal = document.getElementById("applyModal");
+  const closeApplyModal = document.getElementById("closeApplyModal");
+  const safetyChecklist = document.getElementById("safetyChecklist");
+  const proceedApplyBtn = document.getElementById("proceedApplyBtn");
+
+  const policyModal = document.getElementById("policyModal");
+  const closePolicyModal = document.getElementById("closePolicyModal");
+  const policyModalTitle = document.getElementById("policyModalTitle");
+  const policyContent = document.getElementById("policyContent");
+
+  const policyButtons = document.querySelectorAll("[data-policy]");
+  const allCardArrows = document.querySelectorAll(".card-arrow");
+  const navMic = document.querySelector(".nav-mic");
+
+  /* =========================================================
+     Toast
+     ========================================================= */
+
+  function showToast(message) {
+    let toast = document.querySelector(".toast");
+
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.className = "toast";
+      document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    window.clearTimeout(window.__baharKaamToastTimer);
+    window.__baharKaamToastTimer = window.setTimeout(() => {
+      toast.classList.remove("show");
+    }, 2400);
+  }
+
+  /* =========================================================
+     Modal helpers
+     ========================================================= */
+
+  function openModal(modal) {
+    if (!modal) return;
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+
+  function closeAllModals() {
+    closeModal(sosModal);
+    closeModal(applyModal);
+    closeModal(policyModal);
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeAllModals();
+    }
+  });
+
+  [sosModal, applyModal, policyModal].forEach((modal) => {
+    if (!modal) return;
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  /* =========================================================
+     Language panel
+     ========================================================= */
+
+  if (languageBtn && languagePanel) {
+    languageBtn.addEventListener("click", () => {
+      languagePanel.classList.toggle("hidden");
     });
 
-    document.addEventListener("click", () => {
-        sideMenu.classList.add("hidden");
+    languagePanel.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const selected = button.textContent.trim();
+        languagePanel.classList.add("hidden");
+
+        showToast(`Language selected: ${selected}`);
+      });
+    });
+  }
+
+  /* =========================================================
+     AI Mic simulation
+     ========================================================= */
+
+  function startMicDemo() {
+    if (!micButton || !aiStatusTitle || !aiStatusText) return;
+
+    micButton.classList.add("listening");
+    aiStatusTitle.textContent = "Listening... aap bol sakte hain";
+    aiStatusText.textContent = "Sathi AI aapki baat samajh raha hai";
+
+    showToast("Mic active — demo mode");
+
+    window.clearTimeout(window.__baharKaamMicTimer);
+
+    window.__baharKaamMicTimer = window.setTimeout(() => {
+      micButton.classList.remove("listening");
+
+      aiStatusTitle.textContent = "Roadmap ready";
+      aiStatusText.textContent =
+        "Aap Dubai driver job, salary aur legal visa process yahan samajh sakte hain.";
+
+      showToast("Demo answer ready");
+    }, 2200);
+  }
+
+  if (micButton) {
+    micButton.addEventListener("click", startMicDemo);
+  }
+
+  if (navMic) {
+    navMic.addEventListener("click", startMicDemo);
+  }
+
+  /* =========================================================
+     SOS Emergency Modal
+     ========================================================= */
+
+  if (sosButton) {
+    sosButton.addEventListener("click", () => {
+      openModal(sosModal);
+    });
+  }
+
+  if (closeSosModal) {
+    closeSosModal.addEventListener("click", () => {
+      closeModal(sosModal);
+    });
+  }
+
+  const emergencyButtons = document.querySelectorAll(".emergency-list button");
+
+  emergencyButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const label = button.textContent.trim();
+
+      showToast(`${label} guide demo — official links later add honge`);
+    });
+  });
+
+  /* =========================================================
+     Apply Safety Checklist
+     ========================================================= */
+
+  function resetApplyChecklist() {
+    if (!safetyChecklist || !proceedApplyBtn) return;
+
+    safetyChecklist.querySelectorAll('input[type="checkbox"]').forEach((box) => {
+      box.checked = false;
     });
 
-    // --- 2. AI MIC SEARCH BOX ENGINE ---
-    const micBtn = document.getElementById("micBtn");
-    const micIcon = document.getElementById("micIcon");
-    const micWaveform = document.getElementById("micWaveform");
-    const searchInput = document.getElementById("searchInput");
+    proceedApplyBtn.disabled = true;
+  }
 
-    micBtn.addEventListener("click", () => {
-        micWaveform.classList.toggle("hidden");
-        if (!micWaveform.classList.contains("hidden")) {
-            micIcon.className = "fa-solid fa-circle-stop text-red-500";
-            searchInput.value = "Listening... Bolkar batayein...";
-            
-            // Simulation: 3 second baad system automatic input likh dega
-            setTimeout(() => {
-                searchInput.value = "Dubai Driver job road map";
-                micWaveform.classList.add("hidden");
-                micIcon.className = "fa-solid fa-microphone";
-                alert("AI Mic Result: Loading verified roadmap for Dubai Driver job!");
-            }, 3000);
-        } else {
-            micIcon.className = "fa-solid fa-microphone";
-            searchInput.value = "";
-        }
+  function updateProceedButton() {
+    if (!safetyChecklist || !proceedApplyBtn) return;
+
+    const boxes = Array.from(
+      safetyChecklist.querySelectorAll('input[type="checkbox"]')
+    );
+
+    const allChecked = boxes.length > 0 && boxes.every((box) => box.checked);
+    proceedApplyBtn.disabled = !allChecked;
+  }
+
+  if (jobsCardBtn) {
+    jobsCardBtn.addEventListener("click", () => {
+      resetApplyChecklist();
+      openModal(applyModal);
     });
+  }
 
-    // --- 3. CARD 1: JOB FILTERS & PRE-APPLY CHECKLIST SYSTEM ---
-    const catFilters = document.querySelectorAll(".cat-filter");
-    const triggerApplyBtn = document.querySelector(".triggerApplyBtn");
-    const safetyModal = document.getElementById("safetyModal");
-    const cancelApplyBtn = document.getElementById("cancelApplyBtn");
-    const proceedApplyBtn = document.getElementById("proceedApplyBtn");
-    const safetyChks = document.querySelectorAll(".safety-chk");
-
-    catFilters.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const cat = btn.getAttribute("data-category");
-            alert(`Filtering live verified job feed for category: ${cat}`);
-        });
+  if (closeApplyModal) {
+    closeApplyModal.addEventListener("click", () => {
+      closeModal(applyModal);
     });
+  }
 
-    triggerApplyBtn.addEventListener("click", () => {
-        safetyModal.classList.remove("hidden");
-    });
+  if (safetyChecklist) {
+    safetyChecklist.addEventListener("change", updateProceedButton);
+  }
 
-    cancelApplyBtn.addEventListener("click", () => {
-        safetyModal.classList.add("hidden");
-        // Reset checkboxes
-        safetyChks.forEach(chk => chk.checked = false);
-        proceedApplyBtn.disabled = true;
-        proceedApplyBtn.className = "w-1/2 py-2 bg-cyan-600/40 text-slate-400 rounded-xl text-xs font-semibold cursor-not-allowed transition";
-    });
-
-    // Check if all 5 checkboxes are checked
-    safetyChks.forEach(chk => {
-        chk.addEventListener("change", () => {
-            const allChecked = Array.from(safetyChks).every(c => c.checked);
-            if (allChecked) {
-                proceedApplyBtn.disabled = false;
-                proceedApplyBtn.className = "w-1/2 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-xl text-xs font-semibold cursor-pointer transition";
-            } else {
-                proceedApplyBtn.disabled = true;
-                proceedApplyBtn.className = "w-1/2 py-2 bg-cyan-600/40 text-slate-400 rounded-xl text-xs font-semibold cursor-not-allowed transition";
-            }
-        });
-    });
-
+  if (proceedApplyBtn) {
     proceedApplyBtn.addEventListener("click", () => {
-        alert("Redirecting to safe sarkaari/official application route! 🟢");
-        safetyModal.classList.add("hidden");
+      showToast("Safe checklist complete — apply flow demo");
+      closeModal(applyModal);
     });
+  }
 
-    // --- 4. CARD 2: PNR TICKET TRACKER & ALERT ---
-    const activatePnrBtn = document.getElementById("activatePnrBtn");
-    const pnrInput = document.getElementById("pnrInput");
-    const pnrStatusText = document.getElementById("pnrStatusText");
+  /* =========================================================
+     Other card demo actions
+     ========================================================= */
 
-    activatePnrBtn.addEventListener("click", () => {
-        const val = pnrInput.value.trim();
-        if (val === "") {
-            alert("Please enter a valid PNR number.");
-            return;
-        }
-        pnrStatusText.classList.remove("hidden");
-        pnrStatusText.className = "text-[11px] font-mono text-emerald-400 bg-emerald-950/40 p-2 border border-emerald-900 rounded mt-2";
-        pnrStatusText.innerHTML = `💸 PNR: ${val} tracked! WhatsApp Cancellation alert activated successfully. 🟢`;
+  allCardArrows.forEach((button) => {
+    if (button.id === "jobsCardBtn") return;
+
+    button.addEventListener("click", () => {
+      const card = button.closest(".service-card");
+      const title = card?.querySelector("h3")?.textContent?.trim();
+
+      if (!title) {
+        showToast("Feature demo");
+        return;
+      }
+
+      showToast(`${title} — demo screen coming next`);
     });
+  });
 
-    // --- 5. CARD 3: COUNTRY REALITY REPORT DATA ---
-    const countryBtns = document.querySelectorAll(".country-btn");
-    const countryReport = document.getElementById("countryReport");
-    const countryReportPlaceholder = document.getElementById("countryReportPlaceholder");
+  /* =========================================================
+     Policy / Trust Pages Modal
+     ========================================================= */
 
-    const countryData = {
-        UAE: { salary: "1,500 - 2,500 AED", cost: "₹35,000 Total", docs: "Passport, Medical Checkup, Contract Copy" },
-        Saudi: { salary: "1,200 - 1,800 SAR", cost: "₹45,000 Total", docs: "Passport, PCC (Police Clearance), Medical" },
-        Qatar: { salary: "1,400 - 2,200 QAR", cost: "₹40,000 Total", docs: "Passport, Visa Copy, Work Agreement" },
-        Romania: { salary: "800 - 1,200 USD", cost: "₹1,500,00 Total", docs: "Work Permit, PCC, Embassy Appointment" }
-    };
+  const policyData = {
+    about: {
+      title: "About BaharKaam",
+      body: `
+        <p>
+          BaharKaam India, Pakistan, Bangladesh aur Nepal ke workers ke liye
+          ek safety-first foreign jobs aur visa guide platform hai.
+        </p>
+        <p>
+          Humara goal hai worker ko simple bhasha mein legal route, salary reality,
+          documents, agent fraud aur emergency help ke baare mein samjhana.
+        </p>
+      `,
+    },
 
-    countryBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const code = btn.getAttribute("data-country");
-            const data = countryData[code];
-            
-            countryReportPlaceholder.classList.add("hidden");
-            countryReport.classList.remove("hidden");
-            countryReport.innerHTML = `
-                <h4 class="text-xs font-bold text-white border-b border-slate-800 pb-1">${code} Real Reality Report</h4>
-                <p class="text-[11px] text-slate-400">💵 Basic Salary Range: <span class="text-cyan-400 font-mono">${data.salary}</span></p>
-                <p class="text-[11px] text-slate-400">✈️ Real Government Cost: <span class="text-emerald-400 font-mono">${data.cost}</span></p>
-                <p class="text-[11px] text-slate-400">📂 Safe Required Docs: <span class="text-slate-200">${data.docs}</span></p>
-            `;
-        });
+    privacy: {
+      title: "Privacy Policy",
+      body: `
+        <p>
+          BaharKaam user ki privacy ka respect karta hai. Demo version mein hum
+          koi sensitive personal data store nahi kar rahe.
+        </p>
+        <p>
+          Future version mein contact form, analytics, cookies, language preference
+          aur safety reports ke liye data collect ho sakta hai. User data ko misuse
+          nahi kiya jayega.
+        </p>
+      `,
+    },
+
+    terms: {
+      title: "Terms & Conditions",
+      body: `
+        <p>
+          BaharKaam ka use karte waqt user agree karta hai ki website par di gayi
+          information guidance aur awareness ke liye hai.
+        </p>
+        <p>
+          Kisi bhi job, visa, payment, passport submission ya contract decision se
+          pehle official government source, embassy, licensed recruiter ya verified
+          employer se confirm karein.
+        </p>
+      `,
+    },
+
+    disclaimer: {
+      title: "Disclaimer",
+      body: `
+        <p>
+          <strong>BaharKaam visa agency ya recruiting agency nahi hai.</strong>
+        </p>
+        <p>
+          Hum sirf information, safety checklist, verified source guidance aur
+          fraud awareness provide karte hain.
+        </p>
+        <p>
+          Hum 100% visa, guaranteed job, confirm placement ya pakka abroad bhejne
+          ka claim nahi karte.
+        </p>
+      `,
+    },
+
+    contact: {
+      title: "Contact Us",
+      body: `
+        <p>
+          Support ke liye email:
+          <strong>support@baharkaam.com</strong>
+        </p>
+        <p>
+          Fake job, fake visa, passport holding, salary fraud ya agent fraud report
+          karne ke liye future version mein report form add hoga.
+        </p>
+      `,
+    },
+  };
+
+  policyButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const key = button.dataset.policy;
+      const data = policyData[key];
+
+      if (!data || !policyModalTitle || !policyContent) return;
+
+      policyModalTitle.textContent = data.title;
+      policyContent.innerHTML = data.body;
+
+      openModal(policyModal);
     });
+  });
 
-    // --- 6. CARD 4: EXCHANGE RATE CALCULATOR & WHATSAPP SHARE ---
-    const foreignInput = document.getElementById("foreignInput");
-    const homeOutput = document.getElementById("homeOutput");
-    const whatsappShareBtn = document.getElementById("whatsappShareBtn");
-
-    foreignInput.addEventListener("input", () => {
-        const amt = parseFloat(foreignInput.value) || 0;
-        const rate = 22.50; // Stable mockup rate
-        homeOutput.textContent = `${(amt * rate).toFixed(2)} INR / PKR`;
+  if (closePolicyModal) {
+    closePolicyModal.addEventListener("click", () => {
+      closeModal(policyModal);
     });
+  }
 
-    whatsappShareBtn.addEventListener("click", () => {
-        const text = encodeURIComponent("Baharkaam.com Saved Record:\nJob: Light Vehicle Driver\nCountry: UAE\nSalary: 2000 AED\nStatus: Source Checked ✅\nWarning: Never pay cash without legal stamp receipts!");
-        window.open(`https://api.whatsapp.com/send?text=${text}`, "_blank");
+  /* =========================================================
+     Bottom nav demo
+     ========================================================= */
+
+  const navItems = document.querySelectorAll(".bottom-nav .nav-item");
+
+  navItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      navItems.forEach((nav) => nav.classList.remove("active"));
+      item.classList.add("active");
+
+      const label = item.querySelector("small")?.textContent?.trim();
+      if (label && label !== "Home") {
+        showToast(`${label} screen demo — next phase mein banega`);
+      }
     });
+  });
 
-    // --- 7. FAMILY CHECK DRIVER ---
-    const familyCheckMenu = document.getElementById("familyCheckMenu");
-    const familyCheckSection = document.getElementById("familyCheckSection");
-    const trackPassportBtn = document.getElementById("trackPassportBtn");
-    const passportInput = document.getElementById("passportInput");
-    const passportStatusResult = document.getElementById("passportStatusResult");
+  /* =========================================================
+     View All roles demo
+     ========================================================= */
 
-    familyCheckMenu.addEventListener("click", () => {
-        familyCheckSection.classList.remove("hidden");
-        familyCheckSection.scrollIntoView({ behavior: 'smooth' });
+  const viewAllBtn = document.querySelector(".view-all-btn");
+
+  if (viewAllBtn) {
+    viewAllBtn.addEventListener("click", () => {
+      showToast(
+        "All roles: Driver, Helper, Welder, Cleaner, Security, Factory, Electrician, Hotel, Agriculture, AC Tech"
+      );
     });
-
-    trackPassportBtn.addEventListener("click", () => {
-        const pass = passportInput.value.trim();
-        if(pass === "") { alert("Enter Passport Number!"); return; }
-        passportStatusResult.classList.remove("hidden");
-        passportStatusResult.className = "p-3 bg-slate-950 border border-indigo-900 rounded text-xs text-indigo-400 mt-2";
-        passportStatusResult.innerHTML = `🔒 ID: ${pass} | Status: Safe 🟢 | Work Permit Approved via Government Source Checked Link.`;
-    });
-
-    // --- 8. FLOATING EMERGENCY SOS MODAL WINDOW ---
-    const sosBtn = document.getElementById("sosBtn");
-    const sosModal = document.getElementById("sosModal");
-    const closeSosBtn = document.getElementById("closeSosBtn");
-
-    sosBtn.addEventListener("click", () => sosModal.classList.remove("hidden"));
-    closeSosBtn.addEventListener("click", () => sosModal.classList.add("hidden"));
-
-    // --- 9. SCAM REPORT REVIEW FILTER SYSTEM ---
-    const scamForm = document.getElementById("scamForm");
-    scamForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        alert("📨 Thank you! Report successfully recorded inside Admin Verification Queue. It will be live post safety review checks.");
-        scamForm.reset();
-    });
+  }
 });
