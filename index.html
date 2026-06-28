@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BaharKaam - Safe Foreign Jobs & Visa Guide</title>
+  <meta name="description" content="BaharKaam is a safety-first foreign work guidance platform for South Asian workers going to Gulf, Europe and worldwide. Check fake visa, PNR fraud, salary reality and job safety guidance." />
+  <meta name="keywords" content="BaharKaam, foreign job safety, fake visa check, PNR fraud, Gulf jobs safety, Dubai driver salary, Europe work visa guide, overseas jobs guidance" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1457d9" />
+  <meta property="og:title" content="BaharKaam - Safe Foreign Jobs & Visa Guide" />
+  <meta property="og:description" content="Safety-first foreign job, visa, salary and scam guidance for South Asian workers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://baharkaam.com" />
+  <link rel="canonical" href="https://baharkaam.com" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"BaharKaam",
+    "url":"https://baharkaam.com",
+    "description":"Safety-first foreign work guidance platform for South Asian workers going to Gulf, Europe and worldwide.",
+    "contactPoint":{"@type":"ContactPoint","email":"support@baharkaam.com","contactType":"customer support"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"BaharKaam",
+    "url":"https://baharkaam.com",
+    "potentialAction":{"@type":"SearchAction","target":"https://baharkaam.com/search?q={search_term_string}","query-input":"required name=search_term_string"}
+  }
+  </script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <button class="brand" onclick="switchScreen('home')" aria-label="BaharKaam Home">
+        <span class="logo-mark">BK</span>
+        <span class="brand-text">
+          <strong>BaharKaam</strong>
+          <small data-i18n="tagline">Safe Foreign Jobs & Visa Guide</small>
+        </span>
+      </button>
+      <div class="header-actions">
+        <button class="icon-btn" onclick="openLangMenu()" aria-label="Change language">🌐</button>
+        <button class="icon-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+      </div>
+    </header>
+
+    <nav id="menuPanel" class="menu-panel" aria-label="Main menu">
+      <button onclick="openLogin()" data-i18n="login">Login / Sign Up</button>
+      <button onclick="switchScreen('profile')" data-i18n="myProfile">My Safety Profile</button>
+      <button onclick="openModal('savedGuides')" data-i18n="savedGuides">Saved Guides</button>
+      <button onclick="openModal('jobInterests')" data-i18n="jobInterests">My Job Interests</button>
+      <button onclick="openModal('safetyChecks')" data-i18n="safetyChecks">My Safety Checks</button>
+      <button onclick="switchScreen('sos')" data-i18n="reportScam">Report Scam</button>
+      <button onclick="switchScreen('sos')" data-i18n="sosHelp">SOS Help</button>
+      <button onclick="openModal('recruiters')" data-i18n="recruiters">For Recruiters / Companies</button>
+      <button onclick="openModal('appDownload')" data-i18n="appDownload">Download BaharKaam App</button>
+      <button onclick="openLangMenu()" data-i18n="language">Language</button>
+      <button onclick="openPolicy('about')" data-i18n="about">About BaharKaam</button>
+      <button onclick="openPolicy('contact')" data-i18n="contact">Contact</button>
+    </nav>
+
+    <div id="langPanel" class="language-panel">
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setLanguage('hi')">Hindi / Hinglish</button>
+      <button onclick="setLanguage('ur')">Urdu</button>
+      <button onclick="setLanguage('bn')">Bengali</button>
+      <button onclick="setLanguage('ne')">Nepali</button>
+    </div>
+
+    <main>
+      <section id="home" class="screen active-screen">
+        <section class="sathi-strip" onclick="switchScreen('sathi')" role="button" tabindex="0">
+          <div class="mini-mic">🎙️</div>
+          <div>
+            <h1 data-i18n="sathiTitle">Sathi AI</h1>
+            <p data-i18n="sathiSub">Bolkar poochhein: job, visa, salary, safety...</p>
+          </div>
+          <span class="spark">✦</span>
+        </section>
+
+        <section class="quick-grid" aria-label="Main safety tools">
+          <article class="tool-card card-blue" onclick="openFeature('roadmap')">
+            <span class="badge" data-i18n="planSafe">Plan Safe</span>
+            <div class="card-icon">🧳</div>
+            <h2 data-i18n="roadmapTitle">Safe Job Roadmap</h2>
+            <p data-i18n="roadmapSub">Job se travel tak safe steps</p>
+          </article>
+          <article class="tool-card card-red" onclick="openFeature('visa')">
+            <span class="badge" data-i18n="avoidFraud">Avoid Fraud</span>
+            <div class="card-icon">🛂</div>
+            <h2 data-i18n="visaTitle">Visa Fraud Check</h2>
+            <p data-i18n="visaSub">Pay karne se pehle check karein</p>
+          </article>
+          <article class="tool-card card-green" onclick="openFeature('salary')">
+            <span class="badge" data-i18n="knowReality">Know Reality</span>
+            <div class="card-icon">💰</div>
+            <h2 data-i18n="salaryTitle">Salary Guide</h2>
+            <p data-i18n="salarySub">Country & role salary reality</p>
+          </article>
+          <article class="tool-card card-gold" onclick="openFeature('money')">
+            <span class="badge" data-i18n="paySafe">Pay Safe</span>
+            <div class="card-icon">🏦</div>
+            <h2 data-i18n="moneyTitle">Money & Govt Help</h2>
+            <p data-i18n="moneySub">Payment, loan & official help</p>
+          </article>
+        </section>
+
+        <section class="section-block updates-section">
+          <div class="section-head">
+            <h2 data-i18n="updatesGuides">Updates & Guides</h2>
+            <button onclick="openModal('allGuides')" data-i18n="viewAll">View All</button>
+          </div>
+          <div class="mini-guide-row">
+            <button onclick="openGuide('fakeVisa')">Fake Visa</button>
+            <button onclick="openGuide('pnrFraud')">PNR Fraud</button>
+            <button onclick="openGuide('dubaiSalary')">Dubai Salary</button>
+            <button onclick="openGuide('europeWork')">Europe Work</button>
+          </div>
+        </section>
+
+        <section class="safety-alert">
+          <strong data-i18n="latestAlert">Latest Safety Alert</strong>
+          <p data-i18n="alertText">Beware of fake offer letters, fake ticket / PNR and advance payment scams.</p>
+          <button onclick="switchScreen('sos')" data-i18n="reportSimilar">Report Similar Scam</button>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><h2 data-i18n="rolesTitle">Popular Job Roles</h2></div>
+          <div class="chips">
+            <button onclick="filterRole('Driver')">Driver</button><button onclick="filterRole('Factory')">Factory</button><button onclick="filterRole('Construction')">Construction</button><button onclick="filterRole('Helper')">Helper</button><button onclick="filterRole('Cleaner')">Cleaner</button><button onclick="filterRole('Security')">Security</button><button onclick="filterRole('Welder')">Welder</button><button onclick="filterRole('Electrician')">Electrician</button>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><h2 data-i18n="featuredJobs">Featured Safe Jobs</h2><button onclick="switchScreen('jobs')" data-i18n="seeJobs">See Jobs</button></div>
+          <div id="homeJobs" class="job-list"></div>
+        </section>
+
+        <section class="login-prompt">
+          <h2 data-i18n="saveSafety">Save your safety profile</h2>
+          <p data-i18n="loginPrompt">Mobile number se login karein, taaki aapki safety profile, saved guides aur job interest secure rahe.</p>
+          <div class="button-row"><button class="primary" onclick="openLogin()" data-i18n="login">Login / Sign Up</button><button class="ghost" onclick="openModal('guest')" data-i18n="guest">Continue as Guest</button></div>
+        </section>
+      </section>
+
+      <section id="jobs" class="screen">
+        <div class="screen-title"><h1 data-i18n="jobsTitle">Jobs / Naukri</h1><p data-i18n="jobsSub">Safety-first blue-collar job guidance and source status.</p></div>
+        <div class="filter-bar"><select><option>Country</option><option>UAE</option><option>Saudi Arabia</option><option>Qatar</option><option>Romania</option></select><select><option>Role</option><option>Driver</option><option>Helper</option><option>Cleaner</option><option>Welder</option></select><select><option>Risk Level</option><option>Low Risk Indicators</option><option>Medium Risk</option></select></div>
+        <div id="jobsList" class="job-list"></div>
+      </section>
+
+      <section id="sathi" class="screen">
+        <div class="voice-card">
+          <h1 data-i18n="voiceTitle">Sathi AI Safety Helper</h1>
+          <p data-i18n="voiceSub">Chat nahi. Mic dabao, sawal poochho, direct safety answer card dekho.</p>
+          <button class="big-mic" onclick="showAiAnswer()">🎙️</button>
+          <strong data-i18n="tapMic">Tap mic to ask</strong>
+          <div class="quick-prompts">
+            <button onclick="askPrompt('Dubai driver salary kitni hoti hai?')">Dubai driver salary?</button>
+            <button onclick="askPrompt('Visa fake hai ya nahi kaise check karun?')">Fake visa check?</button>
+            <button onclick="askPrompt('Agent advance payment maang raha hai kya karun?')">Agent payment?</button>
+            <button onclick="askPrompt('Ticket PNR kaise check karein?')">PNR check?</button>
+          </div>
+          <article id="aiAnswer" class="answer-card hidden"></article>
+        </div>
+      </section>
+
+      <section id="profile" class="screen">
+        <div class="screen-title"><h1 data-i18n="profileTitle">Abroad Safety Dashboard</h1><p data-i18n="profileSub">Demo profile. Real sharing always needs your permission.</p></div>
+        <div class="dashboard-grid">
+          <article class="dash-card strong"><span>Demo Profile</span><h2>68%</h2><p>Profile Completion</p></article>
+          <article class="dash-card"><span>Safety Status</span><h3>Check Pending</h3><p>User must verify all documents from official sources.</p></article>
+          <article class="dash-card"><span>My Abroad Plan</span><p>Role, country, passport status, agent contact and travel checklist.</p></article>
+          <article class="dash-card"><span>Safe Departure Checklist</span><p>Offer, visa, ticket/PNR, contract, family contact, emergency numbers.</p></article>
+          <article class="dash-card"><span>My Checks</span><p>Visa fraud check, salary reality, payment receipt and source status.</p></article>
+          <article class="dash-card"><span>Family Safety Hub</span><p>Share safety summary with family before payment or travel.</p></article>
+          <article class="dash-card"><span>Proof Locker</span><p>Save document details. Do not share sensitive files publicly.</p></article>
+          <article class="dash-card off"><span>Recruiter Sharing Permission</span><h3>OFF</h3><p>Your profile will never be shared with recruiters/companies without your consent.</p></article>
+        </div>
+      </section>
+
+      <section id="sos" class="screen">
+        <div class="screen-title"><h1 data-i18n="sosTitle">SOS & Scam Help</h1><p data-i18n="sosSub">Fraud, passport, salary, emergency ya videsh mein fasne ki situation mein safe steps follow karein.</p></div>
+        <div class="notice">BaharKaam emergency service nahi hai. Hum safety guidance aur report collection platform hain.</div>
+        <div class="sos-grid">
+          <button onclick="openModal('emergency')">🚨 Emergency Now</button><button onclick="openReportForm()">📝 Report Scam</button><button onclick="openModal('officialHelp')">🏛️ Get Official Help</button><button onclick="openModal('passportHelp')">🛂 Passport & Exit Help</button><button onclick="openModal('salaryRights')">💵 Salary & Labour Rights</button><button onclick="openModal('familyHelp')">👨‍👩‍👦 Family Help</button><button onclick="switchScreen('profile')">📁 Proof Locker</button><button onclick="openModal('communityAlerts')">⚠️ Community Scam Alerts</button><button onclick="openModal('countryHelp')">🌍 Country-wise Help</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-links">
+      <button onclick="openPolicy('about')">About</button><button onclick="openPolicy('contact')">Contact</button><button onclick="openPolicy('privacy')">Privacy Policy</button><button onclick="openPolicy('terms')">Terms</button><button onclick="openPolicy('disclaimer')">Disclaimer</button><button onclick="openPolicy('editorial')">Editorial Policy</button><button onclick="openPolicy('corrections')">Corrections Policy</button><button onclick="openPolicy('report')">Report Scam</button><button onclick="openPolicy('emergency')">Emergency Help</button><button onclick="openPolicy('safety')">Safety Guidelines</button><button onclick="openPolicy('recruiters')">For Recruiters</button>
+    </footer>
+
+    <nav class="bottom-nav" aria-label="Bottom navigation">
+      <button class="nav-btn active" data-target="home" onclick="switchScreen('home')">🏠<span data-i18n="homeNav">Home</span></button>
+      <button class="nav-btn" data-target="jobs" onclick="switchScreen('jobs')">💼<span data-i18n="jobsNav">Naukri</span></button>
+      <button class="nav-btn mic-nav" data-target="sathi" onclick="switchScreen('sathi')">🎙️<span data-i18n="sathiNav">Sathi</span></button>
+      <button class="nav-btn" data-target="profile" onclick="switchScreen('profile')">👤<span data-i18n="profileNav">Profile</span></button>
+      <button class="nav-btn sos-nav" data-target="sos" onclick="switchScreen('sos')">SOS<span data-i18n="sosNav">Help</span></button>
+    </nav>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="close" onclick="closeModal()">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
